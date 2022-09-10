@@ -1,0 +1,37 @@
+body {
+    background: rgb(8,33,71);
+    background: linear-gradient(90deg, rgba(8,33,71,1) 0%, rgba(0,34,105,1) 47%, rgba(8,33,71,1) 100%);
+    color: white;
+}
+
+.logo {
+    width: 12%;
+    height: 12%;
+}
+
+.main-banner {
+    background-image: url(https://cdn.pixabay.com/photo/2020/01/22/12/33/python-4785225_960_720.jpg);
+    color: yellow !important;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.blog-footer {
+    text-align: center;
+}
+
+.blog-texts {
+    padding-top: 30px;
+}
+
+.title {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.voltar-topo {
+    margin-top: 15px;
+    color: white;
+}
