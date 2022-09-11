@@ -17,7 +17,7 @@ class Myblog(models.Model):
     description = models.CharField(max_length=200)
     short_description = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
-    images = models.ImageField()
+    images = models.ImageField(blank=True, upload_to='photos/%Y/%m')
     author = models.CharField(max_length=200)
 
     def __str__(self):
