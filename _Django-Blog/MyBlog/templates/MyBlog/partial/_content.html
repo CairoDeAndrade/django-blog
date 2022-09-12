@@ -22,7 +22,7 @@
           <h3 class="mb-0">{{ post.title }}</h3>
           <div class="mb-1 text-muted">{{ post.date }}</div>
           <p class="card-text mb-auto">{{ post.short_description }}</p>
-          <a href="{% url 'see_post' post_page.id %}" class="stretched-link">Continue lendo...</a>
+          <a href="{% url 'see_post' post.id %}" class="stretched-link">Continue lendo...</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img class="bd-placeholder-img" width="200" height="250"  role="img" src="{{ post.post_image.url }}"></img>
