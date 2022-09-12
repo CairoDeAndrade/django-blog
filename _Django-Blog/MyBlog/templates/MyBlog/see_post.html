@@ -1,24 +1,24 @@
-{% extends 'default.html' %}
+<!--{% extends 'default.html' %}-->
 
-{% block title %}{% endblock %}
+<!--{% block title %}{% endblock %}-->
+{% autoescape off %}{{ post_page.content }}{% endautoescape %}
+<!--{% block content %}-->
+<!--    &lt;!&ndash;NavBar&ndash;&gt;-->
+<!--    {% include 'MyBlog/partial/_nav.html' %}-->
 
-{% block content %}
-    <!--NavBar-->
-    {% include 'MyBlog/partial/_nav.html' %}
+<!--    &lt;!&ndash;Content&ndash;&gt;-->
+<!--    <div class="container">-->
+<!--        <div class="see-post content">-->
+<!--            <div class="img center">-->
+<!--                <img src="{{ post.post_image.url }}" alt="" style="width: 500px; height: 400px;  display: block; margin-left: auto; margin-right: auto; width: 50%;">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-    <!--Content-->
-    <div class="container">
-        <div class="see-post content">
-            <div class="img center">
-                <img src="{{ post.post_image.url }}" alt="" style="width: 500px; height: 400px;  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-            </div>
-        </div>
-    </div>
+<!--    &lt;!&ndash;Footer&ndash;&gt;-->
+<!--    {% include 'MyBlog/partial/_footer.html' %}-->
 
-    <!--Footer-->
-    {% include 'MyBlog/partial/_footer.html' %}
-
-{% endblock %}
+<!--{% endblock %}-->
 
 
 
