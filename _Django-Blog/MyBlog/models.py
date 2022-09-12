@@ -10,15 +10,15 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    # subject = models.CharField(max_length=200)
-    date = models.DateField(default=timezone.now)
-    content = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
-    description = models.CharField(max_length=200)
-    short_description = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
-    images = models.ImageField(blank=True, upload_to='photos/%Y/%m')
+    short_description = models.CharField(max_length=200)
+    description = models.CharField(max_length=200, blank=True)
+    content = models.TextField()
+    date = models.DateField(default=timezone.now)
     author = models.CharField(max_length=200)
+    post_image = models.ImageField(blank=True, upload_to='photos/%Y/%m')
+    # home_images = models.ImageField(blank=True, upload_to='home_photos/%Y/%m')
 
-    # def __str__(self):
-    #     return self.
+    def __str__(self):
+        return self.title

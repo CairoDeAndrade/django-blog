@@ -9,12 +9,12 @@
     </div>
   </div>
 
-
   <div class="title text-yellow fw-bold">
       <h2>ESCOLHA SEU ARTIGO</h2>
   </div>
-  {% for post in posts %}
+
   <div class="row mb-2 blog-texts">
+    {% for post in posts %}
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
@@ -22,31 +22,32 @@
           <h3 class="mb-0">{{ post.title }}</h3>
           <div class="mb-1 text-muted">{{ post.date }}</div>
           <p class="card-text mb-auto">{{ post.short_description }}</p>
-          <a href="#" class="stretched-link">Continue lendo...</a>
+          <a href="{% url 'post' %}" class="stretched-link">Continue lendo...</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img class="bd-placeholder-img" width="200" height="250"  role="img" src="{{ post.images.url }}"></img>
-  {% endfor %}
-
+          <img class="bd-placeholder-img" width="200" height="250"  role="img" src="{{ post.post_image.url }}"></img>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Flask</strong>
-          <h3 class="mb-0">Flask: o que é e como codar</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">O objetivo deste artigo é mostrar de forma prática...</p>
-          <a href="#" class="stretched-link">Continue lendo...</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    {% endfor %}
 
-        </div>
-      </div>
-    </div>
-  </div>
+
+<!--    <div class="col-md-6">-->
+<!--      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">-->
+<!--        <div class="col p-4 d-flex flex-column position-static">-->
+<!--          <strong class="d-inline-block mb-2 text-success">Flask</strong>-->
+<!--          <h3 class="mb-0">Flask: o que é e como codar</h3>-->
+<!--          <div class="mb-1 text-muted">Nov 11</div>-->
+<!--          <p class="mb-auto">O objetivo deste artigo é mostrar de forma prática...</p>-->
+<!--          <a href="#" class="stretched-link">Continue lendo...</a>-->
+<!--        </div>-->
+<!--        <div class="col-auto d-none d-lg-block">-->
+<!--          <img class="bd-placeholder-img" width="200" height="250"  role="img" src=""></img>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 
   <div class="row mb-2">
     <div class="col-md-6">
