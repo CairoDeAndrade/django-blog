@@ -14,7 +14,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     short_description = models.CharField(max_length=200)
     description = models.CharField(max_length=200, blank=True)
-    content = models.TextField()
+    content = models.TextField(blank=True)
     date = models.DateField(default=timezone.now)
     author = models.CharField(max_length=200)
     post_image = models.ImageField(blank=True, upload_to='photos/%Y/%m')
