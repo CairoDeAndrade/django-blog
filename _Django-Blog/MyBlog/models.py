@@ -13,7 +13,6 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
     short_description = models.CharField(max_length=200)
-    description = models.CharField(max_length=200, blank=True)
     content = models.TextField(blank=True)
     date = models.DateField(default=timezone.now)
     author = models.CharField(max_length=200)
