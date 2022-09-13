@@ -25,11 +25,13 @@
           <a href="{% url 'see_post' post.id %}" class="stretched-link">Continue lendo...</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img class="bd-placeholder-img" width="200" height="250"  role="img" src="{{ post.post_image.url }}"></img>
+          <img class="bd-placeholder-img" width="200" height="250"  role="img" src="{{ post.post_image.url }}">
         </div>
       </div>
     </div>
     {% endfor %}
+
+
 
 
 <!--    <div class="col-md-6">-->
@@ -212,5 +214,5 @@
       </div>
     </div>
   </div>
-
+  </div>
 </main>

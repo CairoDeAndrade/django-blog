@@ -16,3 +16,33 @@ def see_post(request, post_id):
     return render(request, 'MyBlog/see_post.html', {
         'post': post
     })
+
+
+def see_library(request):
+    library_posts = Post.objects.filter(
+        category='11'
+    )
+
+    return render(request, 'MyBlog/see_library.html', {
+        'library_posts': library_posts
+    })
+
+
+def see_language(request):
+    language_posts = Post.objects.filter(
+        category='12'
+    )
+
+    return render(request, 'MyBlog/see_language.html', {
+        'language_posts': language_posts
+    })
+
+
+def see_news(request):
+    news_posts = Post.objects.filter(
+        category='13'
+    )
+
+    return render(request, 'MyBlog/see_news.html', {
+        'news_posts': news_posts
+    })

@@ -1,4 +1,10 @@
-{% autoescape off %}{{ post.content }}{% endautoescape %}
+{% extends 'default.html' %}
+
+{% block content %}
+
+    {% autoescape off %}{{ post.content }}{% endautoescape %}
+
+{% endblock %}
 
 
 

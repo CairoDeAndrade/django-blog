@@ -18,7 +18,6 @@ class Post(models.Model):
     date = models.DateField(default=timezone.now)
     author = models.CharField(max_length=200)
     post_image = models.ImageField(blank=True, upload_to='photos/%Y/%m')
-    # home_images = models.ImageField(blank=True, upload_to='home_photos/%Y/%m')
 
     def __str__(self):
         return self.title

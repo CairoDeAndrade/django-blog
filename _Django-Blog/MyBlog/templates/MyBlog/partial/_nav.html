@@ -6,6 +6,9 @@
       <div class="col-4 pt-1">
         <a class="link-secondary" href="#"><img class="logo" src="https://images.pling.com/img/00/00/08/01/07/1107980/66411-1.png" alt="Python logo"></a>
       </div>
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="{% url 'index' %}">Home</a>
+      </div>
       <!-- <div class="col-4 text-center">
         <a class="blog-header-logo text-dark" href="#">Large</a>
       </div> -->
@@ -21,9 +24,9 @@
 
   <div class="nav-scroller py-1 mb-2 white-text">
     <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary text-white" href="#">World</a>
-      <a class="p-2 link-secondary text-white" href="#">U.S.</a>
-      <a class="p-2 link-secondary text-white" href="#">Technology</a>
+      <a class="p-2 link-secondary text-white" href="{% url 'see_library' %}">Bibliotecas</a>
+      <a class="p-2 link-secondary text-white" href="{% url 'see_language' %}">Python</a>
+      <a class="p-2 link-secondary text-white" href="{% url 'see_news' %}">Notícias</a>
       <a class="p-2 link-secondary text-white" href="#">Design</a>
       <a class="p-2 link-secondary text-white" href="#">Culture</a>
       <a class="p-2 link-secondary text-white" href="#">Business</a>
