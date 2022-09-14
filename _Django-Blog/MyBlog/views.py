@@ -1,9 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 
 def index(request):
     posts = Post.objects.order_by('-id')
+    paginator = Paginator(posts, 6)
+
+    page = request.GET.get('p')
+    posts = paginator.get_page(page)
 
     return render(request, 'MyBlog/index.html', {
         'posts': posts
@@ -45,4 +51,16 @@ def see_news(request):
 
     return render(request, 'MyBlog/see_news.html', {
         'news_posts': news_posts
+    })
+
+
+def search(request):
+    term = request.GET.get('term')
+
+    posts = Post.objects.order_by('-id').filter(
+        Q(title__icontains=term) | Q(short_description__icontains=term),
+    )
+
+    return render(request, 'MyBlog/search.html', {
+        'posts': posts
     })

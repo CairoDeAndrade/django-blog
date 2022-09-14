@@ -14,6 +14,19 @@
       <h2>ESCOLHA SEU ARTIGO</h2>
   </div>
 
+  <br><br>
+  <form method="get" action="{% url 'search' %}" style="max-width: 950px; padding-left: 200px;">
+    <div class="form-group row">
+      <div class="col-12">
+        <input class="form-control"
+               type="search" value="{{ request.GET.term }}"
+               id="search-input"
+               placeholder="Search"
+               name="term">
+      </div>
+    </div>
+  </form>
+
   <div class="row mb-2 blog-texts">
     {% for post in posts %}
     <div class="col-md-6">
@@ -34,3 +47,29 @@
   </div>
 
 </main>
+
+<!--Pagination-->
+<nav aria-label="Page navigation example" style="padding-left: 70px;">
+  <ul class="pagination">
+  <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+  {% for pag in posts.paginator.page_range %}
+    {% if posts.number == pag %}
+      <li class="page-item active">
+        <a class="page-link" href="?p={{ pag }}">{{ pag }}</a>
+      </li>
+    {% else %}
+       <li class="page-item ">
+        <a class="page-link" href="?p={{ pag }}">{{ pag }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
