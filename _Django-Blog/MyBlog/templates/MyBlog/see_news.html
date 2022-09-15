@@ -15,6 +15,38 @@
           <h2>ESCOLHA SEU ARTIGO</h2>
       </div>
 
+        <!--Search bar-->
+        <br>
+        <form method="get" action="{% url 'search' %}" style="max-width: 950px; padding-left: 200px;">
+            <div class="form-group row">
+              <div class="col-12">
+                <input class="form-control"
+                       type="search" value="{{ request.GET.term }}"
+                       id="search-input"
+                       placeholder="Search"
+                       name="term">
+              </div>
+            </div>
+        </form>
+
+        <div class="nav-scroller py-1 mb-2 white-text" style="padding-top: 30px !important;">
+            <nav class="nav d-flex">
+              <a class="p-2 link-secondary text-white" href="{% url 'see_library' %}">Bibliotecas</a>
+              <a class="p-2 link-secondary text-white" href="{% url 'see_language' %}">Python</a>
+              <a class="p-2 link-secondary text-white" href="{% url 'see_news' %}">Notícias</a>
+        <!--      <a class="p-2 link-secondary text-white" href="#">Design</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Culture</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Business</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Politics</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Opinion</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Science</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Health</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Style</a>-->
+        <!--      <a class="p-2 link-secondary text-white" href="#">Travel</a>-->
+            </nav>
+        </div>
+
+      <!--Nav filter links-->
       <div class="row mb-2 blog-texts">
         {% for i in news_posts %}
         <div class="col-md-6">

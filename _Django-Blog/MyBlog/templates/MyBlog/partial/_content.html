@@ -4,9 +4,9 @@
 
   <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark main-banner">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="fw-bold">Continue reading...</a></p>
+      <h1 class="display-4 fst-italic">Blog dinâmico feito com Django</h1>
+      <p class="lead my-3">Este blog foi desenvolvido com o framework Django em Python por Gustavo Cerebel e Cairo Augusto de andrade.
+      O blog contém um sistema de pesquisa inteligente e uma filtragem de matérias segundo o que o user escolher.</p>
     </div>
   </div>
 
@@ -14,7 +14,8 @@
       <h2>ESCOLHA SEU ARTIGO</h2>
   </div>
 
-  <br><br>
+  <!--Search bar-->
+  <br>
   <form method="get" action="{% url 'search' %}" style="max-width: 950px; padding-left: 200px;">
     <div class="form-group row">
       <div class="col-12">
@@ -27,7 +28,25 @@
     </div>
   </form>
 
-  <div class="row mb-2 blog-texts">
+  <!--Nav filter links-->
+  <div class="nav-scroller py-1 mb-2 white-text" style="padding-top: 30px !important;">
+    <nav class="nav d-flex">
+      <a class="p-2 link-secondary text-white" href="{% url 'see_library' %}">Bibliotecas</a>
+      <a class="p-2 link-secondary text-white" href="{% url 'see_language' %}">Python</a>
+      <a class="p-2 link-secondary text-white" href="{% url 'see_news' %}">Notícias</a>
+<!--      <a class="p-2 link-secondary text-white" href="#">Design</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Culture</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Business</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Politics</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Opinion</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Science</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Health</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Style</a>-->
+<!--      <a class="p-2 link-secondary text-white" href="#">Travel</a>-->
+    </nav>
+  </div>
+
+  <div class="row mb-2 blog-texts" style="padding-top: 0px !important;">
     {% for post in posts %}
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -52,7 +71,7 @@
 <nav aria-label="Page navigation example" style="padding-left: 70px;">
   <ul class="pagination">
   <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
+      <a class="page-link" href="?p={{ posts.paginator.1 }}1" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
   {% for pag in posts.paginator.page_range %}
@@ -67,7 +86,7 @@
     {% endif %}
   {% endfor %}
   <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
+      <a class="page-link" href="?p={{ posts.paginator.2 }}" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
