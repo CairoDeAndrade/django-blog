@@ -5,7 +5,7 @@
   <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark main-banner">
     <div class="col-md-6 px-0">
       <h1 class="display-4 fst-italic">Blog dinâmico feito com Django</h1>
-      <p class="lead my-3">Este blog foi desenvolvido com o framework Django em Python por Gustavo Cerebel e Cairo Augusto de andrade.
+      <p class="lead my-3">Este blog foi desenvolvido com o framework Django em Python por Gustavo Cerebel e Cairo Augusto de Andrade.
       O blog contém um sistema de pesquisa inteligente e uma filtragem de matérias segundo o que o user escolher.</p>
     </div>
   </div>
@@ -53,7 +53,7 @@
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">{{ post.category }}</strong>
           <h3 class="mb-0">{{ post.title }}</h3>
-          <div class="mb-1 text-muted">{{ post.date }}</div>
+          <div class="mb-1 text-muted">{{ post.date }} | por <strong>{{ post.author }}</strong></div>
           <p class="card-text mb-auto">{{ post.short_description }}</p>
           <a href="{% url 'see_post' post.id %}" class="stretched-link">Continue lendo...</a>
         </div>
