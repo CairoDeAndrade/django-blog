@@ -1,4 +1,4 @@
-# Blog com Django
+# Django Blog
 
 Gostaria de compartilhar um projeto de um Blog dinâmico em Python, feito durante o programa Entra21 - Blusoft com meu parceiro Gustavo Eduardo Cerebel. O programa foi estruturado e sistematizado com a utilização do framework Django, excelente ferramenta para desenvolvimento web, e contém algumas funcionalidades, que são:
 
